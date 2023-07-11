@@ -10,7 +10,7 @@ public class MessageUtilMain {
 		MessageUtilMain messageUtilMain = new MessageUtilMain();
 		System.out.println(messageUtilMain.a);
 		//추가
-//		Array01.main(null);
+//		Array01.main(null); //main이 static 함수이므로 Array01 클래스를 import하면 main함수를 호출할 수 있음
 //		Array01.sum();
 		
 		MessageUtil messageUtil = new MessageUtil();

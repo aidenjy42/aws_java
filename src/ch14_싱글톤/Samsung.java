@@ -10,13 +10,14 @@ public class Samsung {
 	//getYear() : 2023, 2023 * 1000 -> 20230000
 	
 	private Samsung() {
-		companyName = "SAMSUNG";
+		companyName = Samsung.class.getSimpleName().toUpperCase();
+//		companyName = this.getClass().getSimpleName().toUpperCase();//같음
 	}
 
 	//Singleton: 최초에 한번만 하나의 삼성 객체를 생성함
 	//static으로 선언
 	public static Samsung getInstance() { 
-		if(instance == null) { 
+		if(instance == null) { //기존에 생성된 객체가 없으면 객체 생성
 			instance = new Samsung();
 		}
 		return instance; //getter
@@ -33,6 +34,5 @@ public class Samsung {
 	public String getCompanyName() {
 		return companyName;
 	}
-	
-	
+		
 }

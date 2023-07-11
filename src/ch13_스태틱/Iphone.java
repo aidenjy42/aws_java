@@ -6,9 +6,7 @@ public class Iphone {
 	private String model;
 	
 	public Iphone(String model) {
-		super();
-		this.serialNumber += autoIncrement;
-		this.serialNumber = serialNumber;
+		serialNumber += autoIncrement;
 		this.model = model;
 		autoIncrement++;
 	}

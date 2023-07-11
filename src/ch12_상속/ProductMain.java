@@ -15,7 +15,6 @@ public class ProductMain {
 		System.out.println(computer2.getType()); //computer 함수 쓸 수 있음
 		
 		
-		
 //		Product product = clothes; //런타임 에러. 캐스팅예외
 	}
 
