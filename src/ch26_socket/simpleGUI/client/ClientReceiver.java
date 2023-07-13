@@ -41,11 +41,18 @@ public class ClientReceiver extends Thread {
 		String resource = gson.fromJson(requestBody, RequestBodyDto.class).getResource();
 		
 		switch(resource) {
-			case "showMessage"://textArea에 메시지 출력
-				//<> 안의 String타입은 다운캐스팅이 바로 된다 (<>가 클래스 타입이면 fromJson( , ReqDto.class) 해도 <> 타입이 다운캐스팅이 안됨)
-				String messageContent = (String) gson.fromJson(requestBody, RequestBodyDto.class).getBody();
-				SimpleGUIClient.getInstance().getTextArea().append(messageContent + "\n");
+			case "updateRoomList":
+				List<String> roomList = (List<String>) gson.fromJson(requestBody, RequestBodyDto.class).getBody();
+				SimpleGUIClient.getInstance().getRoomListModel().clear();
+				SimpleGUIClient.getInstance().getRoomListModel().addAll(roomList);
 				break;
+			
+			case "showMessage"://textArea에 메시지 출력
+				//<> 안의 String타입은 다운캐스팅이 바로 된다 (<>가 사용자정의 클래스 타입이면 fromJson( , ReqDto.class) 해도 <> 타입이 다운캐스팅이 안됨)
+				String messageContent = (String) gson.fromJson(requestBody, RequestBodyDto.class).getBody();
+				SimpleGUIClient.getInstance().getChattingTextArea().append(messageContent + "\n");
+				break;
+				
 			case "updateUserList":
 				List<String> usernameList = (List<String>) gson.fromJson(requestBody, RequestBodyDto.class).getBody(); //dto가 가져온 json 에서 body의 값를 가져옴
 				SimpleGUIClient.getInstance().getUserListModel().clear(); // 기존 접속자리스트창을 비움

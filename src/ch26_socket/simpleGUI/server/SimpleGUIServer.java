@@ -6,9 +6,12 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
+import ch26_socket.simpleGUI.server.entity.Room;
+
 public class SimpleGUIServer {
 	
 	public static List<ConnectedSocket> connectedSocketList = new ArrayList<>();
+	public static List<Room> roomList = new ArrayList<>();//방 리스트: (스레드 리스트와 방정보: Room)들을 담는 리스트
 	//스레드 리스트
 	public static void main(String[] args) {
 		
