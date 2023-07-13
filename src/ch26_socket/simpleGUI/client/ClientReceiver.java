@@ -29,7 +29,8 @@ public class ClientReceiver extends Thread {
 				//다른 클라이언트가 메시지를 치면 서버로 넘어가고,
 				//서버가 스레드 리스트를 foreach() 돌려서 모든 클라이언트에 그 메시지를 전송
 				// -> 클라이언트측(여기)에서 받아와서 그 데이터를 textArea에 추가
-				//main test
+				//branch test
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			} 
