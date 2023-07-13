@@ -36,7 +36,7 @@ public class ClientReceiver extends Thread {
 			} 
 		}
 	}
-	
+	//main test2
 	private void requestController (String requestBody) {
 		Gson gson = new Gson();
 		String resource = gson.fromJson(requestBody, RequestBodyDto.class).getResource();
